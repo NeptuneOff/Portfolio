@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.loader{
+    width: 100%;
+    height: 100%;
+}
+
+.panel{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+
+.leftPanel{
+    top: 0;
+    left: 0;
+    transition: 1s all;
+}
+
+.rightPanel{
+    top: 0;
+    right: 0;
+    transition: 1s all;
+}
+
+.initButtonContainer{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Instru-Sans-bold";
+
+    mix-blend-mode: difference;
+    user-select: none;
+
+    transition: all 1s;
+}
+
+.centerInitButton{
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+
+    font-size: 50px;
+    transition: all 1s;
+    transition: all 1s, font-size 0s;
+}
+
+.centerInitButtonOff{
+    width: 0;
+    font-size: 0px;
+    color: white;
+    transition: all 1s, font-size 0s;
+}
+
+.strokeInitButton{
+    width: 90%;
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    border: 10px rgb(255, 255, 255) solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+
+    animation: disformButton 2s infinite ease-in-out;
+
+    transition: all 1s;
+}
+
+.strokeInitButtonOff{
+    border: 0px rgb(255, 255, 255) solid;
+    transition: all 1s;
+}
+
+@keyframes disformButton {
+    0% {
+        width: 85%;
+        height: 90%;
+        /* transform: translate(-50%,-50%), rotate(-120deg); */
+    }
+    50% {
+        width: 90%;
+        height: 85%;
+        /* transform: translate(-50%,-50%), rotate(-240deg); */
+    }
+    100% {
+        width: 85%;
+        height: 90%;
+        /* transform: translate(-50%,-50%), rotate(-360deg); */
+    }
+}
