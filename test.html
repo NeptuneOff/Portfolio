@@ -1,55 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inversion des couleurs</title>
+  <title>Distance Souris - Div Absolue</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #222; /* Couleur de fond initiale */
+      background-color: #f0f8ff;
+      position: relative; /* Nécessaire pour que les éléments absolus soient positionnés */
     }
 
-    .container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(45deg, red,green, blue); /* Exemple de fond avec des couleurs variées */
-      overflow: hidden;
-    }
-
-    .inverse-shape {
+    .target-div {
+      width: 100px;
+      height: 100px;
+      background-color: #ff5722;
+      border-radius: 10px;
       position: absolute;
-      width: 150px;
-      height: 150px;
-      background: white; /* Une couleur "neutre" pour maximiser l'inversion */
-      mix-blend-mode: difference; /* Le mode de mélange pour inverser */
-      border-radius: 50%; /* Forme circulaire */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-
-      animation: move 2s infinite linear;
     }
 
-
-    @keyframes move {
-        from{
-            transform: translate(100px,-100px);
-        }
-        to {
-            transform: translate(-100px,100px);
-        }
+    .distance {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="inverse-shape"></div>
+  <div class="target-div" id="target">
+    <div class="distance" id="distance">Distance: 0</div>
   </div>
+
+  <script>
+    const target = document.getElementById("target");
+    const distanceDisplay = document.getElementById("distance");
+
+    document.addEventListener("mousemove", (event) => {
+      // Coordonnées de la souris
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+
+      // Coordonnées de la div (peu importe qu'elle soit en position absolute)
+      const rect = target.getBoundingClientRect();
+      const divCenterX = rect.left + rect.width / 2;
+      const divCenterY = rect.top + rect.height / 2;
+
+      // Calcul de la distance entre la souris et le centre de la div
+      const dx = mouseX - divCenterX;
+      const dy = mouseY - divCenterY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      // Mise à jour du texte avec la distance
+      distanceDisplay.textContent = `Distance: ${Math.round(distance)}px`;
+    });
+  </script>
 </body>
 </html>
