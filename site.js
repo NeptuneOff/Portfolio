@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 // Définir le port sur lequel le serveur va écouter
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Définir le dossier public contenant le site Web
 const publicDirectory = path.join(__dirname, 'public');
@@ -14,13 +14,13 @@ const publicDirectory = path.join(__dirname, 'public');
 // Servir les fichiers statiques du dossier public
 app.use(express.static(publicDirectory));
 
-// Route par défaut pour capturer les requêtes non gérées
+// Route pour toutes les requêtes non gérées, renvoyant vers index.html (SPA support)
 app.get('*', (req, res) => {
-    res.status(404).send('Page non trouvée');
+    res.sendFile(path.join(publicDirectory, 'index.html'));
 });
 
 // Démarrer le serveur
 app.listen(PORT, () => {
-    console.log(`Le serveur est en cours d'exécution sur http://localhost:${PORT}`);
-    console.log(`Les fichiers statiques sont servis depuis le dossier: ${publicDirectory}`);
+    console.log(`Le serveur est en cours d'exécution sur le port ${PORT}`);
+    console.log(`Les fichiers statiques sont servis depuis : ${publicDirectory}`);
 });
