@@ -86,7 +86,7 @@ body{
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
-    height: 30%;
+    height: 40%;
     aspect-ratio: 1 / 1;
 
     display: flex;
@@ -100,7 +100,9 @@ body{
 
     transition: all 1s;
 
-    font-size: 29px;
+    font-size: 50px;
+
+    box-sizing: border-box;
 }
 
 .initBounce{
@@ -112,15 +114,15 @@ body{
         transform: translate(-50%, -50%);
     }
     100% {
-        transform: translate(-50%, 100%);
+        transform: translate(-50%, 50%);
     }
 }
 
 @keyframes initLeave {
     from {
-        font-size: 29px;
+        font-size: 50px;
         color: black;
-        height: 30%;
+        height: 40%;
     }
 
     to {
@@ -134,7 +136,7 @@ body{
 }
 
 .centerInitButton{
-    width: 80%;
+    width: 75%;
     aspect-ratio: 1 / 1;
     background-color: rgb(255, 255, 255);
     mix-blend-mode: difference;
@@ -162,8 +164,8 @@ body{
 }
 
 .strokeInitButton{
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     aspect-ratio: 1 / 1;
     border-radius: 100%;
     border: 10px rgb(255, 255, 255) solid;
@@ -180,6 +182,8 @@ body{
     animation: disformButton 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 
     transition: all 1s;
+
+    box-sizing: border-box;
 }
 
 .strokeInitButtonOff{
