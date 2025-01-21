@@ -6,6 +6,8 @@ initButton = document.querySelector(".initButtonContainer")
 buttonCenter = document.querySelector(".centerInitButton")
 buttonStroke = document.querySelector(".strokeInitButton")
 
+loader = document.querySelector(".loader")
+
 body = document.querySelector("body")
 
 const sleepBlocking = ms => {
@@ -21,6 +23,8 @@ initButton.addEventListener("click", function (e) {
   initButton.classList.add("initBounce")
   leftPanel.classList.add("lpLeave")
   rightPanel.classList.add("a")
+
+  loader.classList.add("loaderReduce")
 
   body.classList.add("blackBody")
 

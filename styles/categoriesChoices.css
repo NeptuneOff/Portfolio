@@ -1,0 +1,52 @@
+:root{
+    --ambientGrey:#141414;
+    --smoothWhite:#e0e0e0;
+}
+
+
+.categoriesChoices{
+    width: 100%;
+    height: 100%;
+    background-color: var(--ambientGrey);
+    transition: 0.3s all;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    box-sizing: border-box;
+}
+
+
+.choice{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Instru-Sans-bold";
+    font-size: 3vw;
+
+    transition: 0.3s all;
+
+    background-color: var(--ambientGrey);
+    color: var(--smoothWhite);
+}
+
+/* .webdev{
+    background-color: var(--ambientGrey);
+    color: var(--smoothWhite);
+}
+
+
+.robotic{
+    background-color: var(--smoothWhite);
+    color: var(--ambientGrey);
+} */
+
+.choice:hover{
+    background-color: var(--smoothWhite);
+    color: var(--ambientGrey);
+    transition: 0.3s all;
+}
