@@ -70,6 +70,7 @@
     position: absolute;
     margin: 0;
     padding: 0;
+    transition: color 1s;
 
 }
 
