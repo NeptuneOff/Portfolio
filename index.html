@@ -50,5 +50,10 @@
 <script src="front-js/loader.js"></script>
 <script src="front-js/categories.js"></script>
 <!-- <script src="main.js?v=<?= time(); ?>"></script> -->
-
+<script>
+    // Ajout d'un timestamp pour vider le cache
+    const stylesheet = document.getElementById('stylesheet');
+    const timestamp = new Date().getTime();
+    stylesheet.href = `styles.css?v=${timestamp}`;
+</script>
 </html>
