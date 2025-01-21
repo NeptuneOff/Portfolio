@@ -12,7 +12,7 @@
 }
 
 .loaderReduce{
-    animation: loaderReduce 0.7s forwards ease 1.7s;
+    animation: loaderReduce 1s forwards ease 1.7s;
 }
 
 @keyframes loaderReduce{
