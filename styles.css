@@ -1,5 +1,11 @@
+:root{
+    --ambientGrey:#141414;
+    --smoothWhite:#e0e0e0;
+}
+
+
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--smoothWhite);
     margin: 0;
     padding: 0;
 
@@ -14,7 +20,7 @@ body{
 }
 
 .blackBody{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--smoothWhite);
     animation: blackBody 0s forwards;
     animation-delay: 1s;
 
@@ -22,10 +28,10 @@ body{
 
 @keyframes blackBody {
     from {
-        background-color: white;
+        background-color: var(--smoothWhite);
     }
     to {
-        background-color: black;
+        background-color: var(--ambientGrey);
     }
 }
 
@@ -95,7 +101,6 @@ body{
 
     font-family: "Instru-Sans-bold";
 
-    mix-blend-mode: difference;
     user-select: none;
 
     transition: all 1s;
@@ -127,9 +132,9 @@ body{
 
     to {
         font-size: 0px;
-        color: white;
+        color: var(--smoothWhite);
         height: 0%;
-        border: 0px solid black;
+        border: 0px solid --ambientGrey;
         opacity: 0;
     }
     
@@ -138,14 +143,14 @@ body{
 .centerInitButton{
     width: 75%;
     aspect-ratio: 1 / 1;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--ambientGrey);
     mix-blend-mode: difference;
     border-radius: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(0, 0, 0);
+    color: var(--smoothWhite);
 
     position: absolute;
     transform: translate(-50%,-50%);
@@ -159,7 +164,7 @@ body{
 .centerInitButtonOff{
     width: 0;
     font-size: 0px;
-    color: white;
+    color: var(--smoothWhite);
     transition: all 1s, font-size 0s;
 }
 
@@ -168,12 +173,12 @@ body{
     height: 95%;
     aspect-ratio: 1 / 1;
     border-radius: 100%;
-    border: 10px rgb(255, 255, 255) solid;
+    border: 10px var(--ambientGrey) solid;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(0, 0, 0);
+    color: var(--smoothWhite);
 
     position: absolute;
     transform: translate(-50%,-50%);
@@ -187,7 +192,7 @@ body{
 }
 
 .strokeInitButtonOff{
-    border: 0px rgb(255, 255, 255) solid;
+    border: 0px var(--ambientGrey) solid;
     transition: all 1s;
 }
 
